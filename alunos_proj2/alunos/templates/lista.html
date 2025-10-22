@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h2>Lista de Alunos</h2>
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Matrícula</th>
+        <th>Ações</th>
+    </tr>
+    {% for aluno in alunos %}
+    <tr>
+        <td>{{ aluno.nome }}</td>
+        <td>{{ aluno.matricula }}</td>
+        <td>
+            <a href="{% url 'detalhe_aluno' aluno.id %}">Ver</a> |
+            <a href="{% url 'editar_aluno' aluno.id %}">Editar</a> |
+            <a href="{% url 'excluir_aluno' aluno.id %}">Excluir</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="3">Nenhum aluno cadastrado.</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

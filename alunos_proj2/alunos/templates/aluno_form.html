@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h2>{% if aluno %}Editar Aluno{% else %}Novo Aluno{% endif %}</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <label>Nome:</label>
+    <input type="text" name="nome" value="{{ aluno.nome|default:'' }}">
+    <label>Matrícula:</label>
+    <input type="text" name="matricula" value="{{ aluno.matricula|default:'' }}">
+    <button type="submit">Salvar</button>
+</form>
+{% endblock %}

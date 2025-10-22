@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD de Alunos</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+</head>
+<body>
+<header>
+    <h1>Gerenciamento de Alunos</h1>
+    <nav>
+        <a href="{% url 'lista_alunos' %}">Início</a>
+        <a href="{% url 'criar_aluno' %}">Novo Aluno</a>
+    </nav>
+</header>
+
+<main>
+    {% block conteudo %}{% endblock %}
+</main>
+</body>
+</html>
